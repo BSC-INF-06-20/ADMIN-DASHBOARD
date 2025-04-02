@@ -17,7 +17,7 @@ export const ContextProvider = ({children}) => {
 
 
     return (
-        <StateContext.Provider value={{test: 
+        <StateContext.Provider value={{
                  activeMenu,
                  setActiveMenu,
                  }}>
