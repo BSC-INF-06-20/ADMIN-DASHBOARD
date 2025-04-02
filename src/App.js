@@ -3,13 +3,14 @@ import {BrowserRouter,   Routes, Route} from 'react-router-dom';
 import {TooltipComponent} from '@syncfusion/ej2-react-popups';
 import {FiSettings} from 'react-icons/fi';
 import {NavBar, Footer, SideBar, ThemeSettings} from './components'
-import {Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Area, Bar, PieChart, Financial, ColorPicker, ColorMapping, Editor } from './pages'
+import {Ecommerce, Orders, Calendar, Employees, Stacked, Pyramid, Customers, Kanban, Area, Bar ,PieChart, Financial, ColorPicker, ColorMapping, Editor, Line } from './pages'
 import './App.css'
-
+import { useStateContext } from './contexts/ContextProvider';
 
 
 const App = () => {
-  const activeMenu = true;
+const {activeMenu} = useStateContext();
+
   return (
     <div>
       <BrowserRouter>
@@ -24,10 +25,10 @@ const App = () => {
 
          {activeMenu ? (
           <div className='w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white' >
-            sidebar
+                  <SideBar/>
           </div>
          ) : (<div className='w-0 dark:bg-secondary-dark-bg'>
-                    sidebar 
+                    <SideBar/> 
              </div>)}
 
              {/* Here we create our navigation bar */}
@@ -35,7 +36,7 @@ const App = () => {
               `dark:bg-main-bg bg-main-bg min-h-screen w-full ${ activeMenu ? 'md:ml-72' : 'flex-2'}`
               }>
                 <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
-                          Navbar
+                          <NavBar/>
                 </div>
                </div>
 
@@ -58,13 +59,14 @@ const App = () => {
                   <Route path='/color-picker' element='Color-picker'/>
 
                   {/*Charts */}
-                  <Route path='/LineChart' element='LineChart'/>
+                  <Route path='/Line' element='Line'/>
                   <Route path='/area' element='Area'/>
                   <Route path='/bar' element='Bar'/>
                   <Route path='/financial' element='Financial'/>
-                  <Route path='/color-maping' element='Color-maping'/>
+                  <Route path='/color-mapping' element='Color-mapping'/>
                   <Route path='/pyramid' element='Pyramid'/>
                   <Route path='/Stacked' element='Stacked'/>
+                  <Route path='/pie' element='Pie-chart'/>
                  </Routes>
 
                </div>

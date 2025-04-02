@@ -535,7 +535,7 @@ export const links = [
         icon: <AiOutlineBarChart />,
       },
       {
-        name: 'pie',
+        name: 'Pie',
         icon: <FiPieChart />,
       },
       {
