@@ -38,37 +38,38 @@ const {activeMenu} = useStateContext();
                 <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
                 <NavBar/>
                 </div>
-               </div>
+              
 
 {/*The main DIV for ROUTING */}
                <div> 
                  <Routes>
                   {/*This is going to be our DashBoard */}
-                  <Route path='/' element='Ecommerce'/>
-                  <Route path='/ecommerce' element='Ecommerce'/>
+                  <Route path='/' element={<Ecommerce/>}/>
+                  <Route path='/ecommerce' element={<Ecommerce/>}/>
                   
                   {/*Our Pages */}
-                  <Route path='/orders' element='Orders'/>
-                  <Route path='/employees' element='Employees'/>
-                  <Route path='/customers' element='Customers'/>
+                  <Route path='/oders' element={<Orders/>}/>
+                  <Route path='/employees' element={<Employees/>}/>
+                  <Route path='/Customers' element={<Customers/>}/>
 
                   {/*Apps */}
-                  <Route path='/kanban' element='Kanban'/>
-                  <Route path='/editor' element='Editor'/>
-                  <Route path='/calendar' element='Calendar'/>
-                  <Route path='/color-picker' element='Color-picker'/>
+                  <Route path='/kanban' element={<Kanban/>}/>
+                  <Route path='/editor' element={<Editor/>}/>
+                  <Route path='/calendar' element={<Calendar/>}/>
+                  <Route path='/color-picker' element={<ColorPicker/>}/>
 
                   {/*Charts */}
-                  <Route path='/Line' element='Line'/>
-                  <Route path='/area' element='Area'/>
-                  <Route path='/bar' element='Bar'/>
-                  <Route path='/financial' element='Financial'/>
-                  <Route path='/color-mapping' element='Color-mapping'/>
-                  <Route path='/pyramid' element='Pyramid'/>
-                  <Route path='/Stacked' element='Stacked'/>
-                  <Route path='/pie' element='Pie-chart'/>
+                  <Route path='/Line' element={<Line/>}/>
+                  <Route path='/area' element={<Area/>}/>
+                  <Route path='/bar' element={<Bar/>}/>
+                  <Route path='/financial' element={<Financial/>}/>
+                  <Route path='/color-mapping' element={<ColorMapping/>}/>
+                  <Route path='/pyramid' element={<Pyramid/>}/>
+                  <Route path='/Stacked' element={<Stacked/>}/>
+                  <Route path='/pie' element={<PieChart/>}/>
                  </Routes>
 
+               </div>
                </div>
       </div>
       </BrowserRouter>
